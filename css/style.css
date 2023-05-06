@@ -1,0 +1,309 @@
+:root {
+  --main-bg: hsl(222, 26%, 31%);
+  --toggle-bg: hsl(223, 31%, 20%);
+  --keypad-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --screen-text: hsl(0, 0%, 100%);
+  --primary-key-bg: hsl(30, 25%, 89%);
+  --primary-key-sh: hsl(28, 16%, 65%);
+  --primary-key-text: hsl(221, 14%, 31%);
+  --secondary-key-bg: hsl(225, 21%, 49%);
+  --secondary-key-sh: hsl(224, 28%, 35%);
+  --secondary-key-text: hsl(0, 0%, 100%);
+  --terciary-keybg-tg: hsl(6, 63%, 50%);
+  --terciary-key-sh: hsl(6, 70%, 34%);
+  --terciary-key-text: hsl(0, 0%, 100%);
+}
+
+.second {
+  --main-bg: hsl(0, 0%, 90%);
+  --toggle-bg: hsl(0, 5%, 81%);
+  --keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+  --screen-text: hsl(60, 10%, 19%);
+  --primary-key-bg: hsl(45, 7%, 89%);
+  --primary-key-sh: hsl(35, 11%, 61%);
+  --primary-key-text: hsl(60, 10%, 19%);
+  --secondary-key-bg: hsl(185, 42%, 37%);
+  --secondary-key-sh: hsl(185, 58%, 25%);
+  --secondary-key-text: hsl(0, 0%, 100%);
+  --terciary-keybg-tg: hsl(25, 98%, 40%);
+  --terciary-key-sh: hsl(25, 99%, 27%);
+  --terciary-key-text: hsl(0, 0%, 100%);
+}
+
+.third {
+  --main-bg: hsl(268, 75%, 9%);
+  --toggle-bg: hsl(268, 71%, 12%);
+  --keypad-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+  --screen-text: hsl(52, 100%, 62%);
+  --primary-key-bg: hsl(268, 47%, 21%);
+  --primary-key-sh: hsl(290, 70%, 36%);
+  --primary-key-text: hsl(52, 100%, 62%);
+  --secondary-key-bg: hsl(281, 89%, 26%);
+  --secondary-key-sh: hsl(285, 91%, 52%);
+  --secondary-key-text: hsl(0, 0%, 100%);
+  --terciary-keybg-tg: hsl(176, 100%, 44%);
+  --terciary-key-sh: hsl(177, 92%, 70%);
+  --terciary-key-text: hsl(198, 20%, 13%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "League Spartan", sans-serif;
+  background: var(--main-bg);
+  color: var(--screen-text);
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+.wrapper {
+  height: auto;
+  width: 35%;
+  display: grid;
+  gap: 20px;
+  grid-template: 2em 4em 1fr/100%;
+}
+
+.title-themes,
+.themes,
+.labels,
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-themes {
+  height: 100%;
+  width: 100%;
+}
+.title-themes p,
+.title-themes label {
+  font-size: 0.6em;
+}
+
+.themes {
+  width: 30%;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.labels-inputs {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.labels {
+  text-align: center;
+  padding: 10px;
+}
+
+.inputs {
+  height: 25px;
+  width: 70px;
+  background: var(--toggle-bg);
+  border-radius: 100px;
+  padding: 5px;
+}
+.inputs input {
+  height: 15px;
+  width: 15px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: var(--terciary-keybg-tg);
+  border-radius: 50%;
+  opacity: 0;
+}
+.inputs input:checked {
+  opacity: 1;
+}
+.inputs input:hover {
+  cursor: pointer;
+  filter: brightness(120%);
+}
+
+.screen,
+.keypad,
+button {
+  border-radius: 10px;
+}
+
+.screen {
+  font-size: 2em;
+  padding: 0 0.5em;
+  background: var(--screen-bg);
+  color: var(--screen-text);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.keypad {
+  background: var(--keypad-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keys {
+  display: grid;
+  grid-template: "seven eight nine del" 60px "four five six addition" 60px "one two three subtraction" 60px "dot zero division multiplication" 60px "reset reset equal equal" 60px/102px 102px 102px 102px;
+  gap: 21px;
+  padding: 1em;
+}
+
+button {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  color: var(--primary-key-text);
+  background: var(--primary-key-bg);
+  box-shadow: 0 5px var(--primary-key-sh);
+}
+button:hover {
+  cursor: pointer;
+  filter: brightness(120%);
+}
+
+.on-focus:focus {
+  filter: brightness(120%);
+}
+
+.secondary {
+  color: var(--secondary-key-text);
+  background: var(--secondary-key-bg);
+  box-shadow: 0 5px var(--secondary-key-sh);
+}
+
+.terciary {
+  color: var(--terciary-key-text);
+  background: var(--terciary-keybg-tg);
+  box-shadow: 0 5px var(--terciary-key-sh);
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#dot {
+  grid-area: dot;
+}
+
+#division {
+  grid-area: division;
+}
+
+#multiplication {
+  grid-area: multiplication;
+}
+
+#subtraction {
+  grid-area: subtraction;
+}
+
+#addition {
+  grid-area: addition;
+}
+
+#del {
+  grid-area: del;
+}
+
+#reset {
+  grid-area: reset;
+}
+
+#equal {
+  grid-area: equal;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 5px;
+}
+.attribution a {
+  color: var(--screen-text);
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 85%;
+    grid-template: 2em 3em 1fr/100%;
+  }
+  .screen,
+  .keypad,
+  button {
+    border-radius: 5px;
+  }
+  .themes {
+    width: auto;
+  }
+  .themes P {
+    margin-right: 20px;
+  }
+  .screen {
+    font-size: 1.3em;
+  }
+  .keys {
+    height: 100%;
+    width: 100%;
+    grid-template: "seven eight nine del" 61px "four five six addition" 61px "one two three subtraction" 61px "dot zero division multiplication" 61px "reset reset equal equal" 61px/61px 61px 61px 61px;
+    gap: 15px;
+    padding: 0.5em;
+  }
+  button {
+    font-size: 0.8em;
+  }
+}/*# sourceMappingURL=style.css.map */
