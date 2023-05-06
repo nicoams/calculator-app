@@ -42,8 +42,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://your-solution-url.com)
-- Live Site URL: [GitHub](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29/hub)
+- Live Site URL: [GitHub](https://nicoams.github.io/calculator-app/)
 
 ## My process
 
@@ -139,8 +139,6 @@ Now, there are two ifs here. While the first one validates if the browser suppor
 
 About the lines:
 ```js
-const getTheme = localStorage.getItem('theme');
-html.classList = getTheme;
 document.getElementById(getTheme).checked = true;
 ```
 
